@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- 	Action mappings for struts -->
+	<bean name="/login" class="com.pks.insurance.action.LoginAction">
+	<property name="userManager" ref="userManager"/>
+	</bean>
+	
+	<bean name="/userRegister" class="com.pks.insurance.action.RegisterUserAction">
+	<property name="userManager" ref="userManager"/>
+	</bean>
+	
+	<bean name="/vehicleRegister" class="com.pks.insurance.action.RegisterVehicleAction">
+	<property name="userManager" ref="userManager"/>
+	</bean>
+	
+	<bean name="/quote" class="com.pks.insurance.action.QuoteAction">
+	<property name="premiumManager" ref="premiumManager"/>
+	</bean>
+	
+	<bean name="/searchUser" class="com.pks.insurance.action.AdminSearchUserAction">
+	<property name="userManager" ref="userManager"/>
+	</bean>
+	
+	<bean name="/deleteUser" class="com.pks.insurance.action.AdminRemoveUserAction">
+	<property name="userManager" ref="userManager"/>
+	</bean>
+	
+	<bean name="/logout" class="com.pks.insurance.action.LogoutAction"/>
+</beans>
