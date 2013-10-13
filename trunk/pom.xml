@@ -5,11 +5,11 @@
 	<artifactId>insurance</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>insurance Maven Webapp</name>
+	<name>insurance</name>
 	<url>https://github.com/sonipks/auto-insurance</url>
 	<properties>
 		<java-version>1.6</java-version>
-		<org.springframework-version>3.1.0.RELEASE</org.springframework-version>
+		<org.springframework-version>3.2.4.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

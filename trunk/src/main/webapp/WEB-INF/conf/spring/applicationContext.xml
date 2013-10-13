@@ -10,7 +10,8 @@
 
 	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
 	 <property name="driverClassName" value="org.hsqldb.jdbcDriver"/> 
-	 <property name="url"  value="jdbc:hsqldb:mem:."/>
+	 <property name="url"  value="jdbc:hsqldb:C:\TEMP\auto-insurance\trunk\mydb\"/>
+<!-- 	 <property name="url"  value="jdbc:hsqldb:mem:."/> -->
 	 </bean> 
 <!--
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 

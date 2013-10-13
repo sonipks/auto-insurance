@@ -90,7 +90,7 @@
 	<!-- ========================= Tiles plugin =============================== -->
 	<!-- This plugin initialize Tiles definition factory. This later can takes 
 		some parameters explained here after. The plugin first read parameters from 
-		web.xml, thenoverload them with parameters defined here. All parameters are 
+		web.xml, then overload them with parameters defined here. All parameters are 
 		optional. The plugin should be declared in each struts-config file. - definitions-config: 
 		(optional) Specify configuration file names. There can be several comma separated 
 		file names (default: ?? ) - moduleAware: (optional - struts1.1) Specify if 
@@ -110,7 +110,9 @@
 	</plug-in>
 
 	<!-- ========================= Validator plugin ================================= -->
-	<!-- <plug-in className="org.apache.struts.validator.ValidatorPlugIn"> <set-property 
-		property="pathnames" value="validator-rules.xml,validation.xml" /> <set-property 
-		property="stopOnFirstError" value="true"/> </plug-in> -->
+	 <plug-in className="org.apache.struts.validator.ValidatorPlugIn"> <set-property 
+		property="pathnames" value="WEB-INF/validator-rules.xml,WEB-INF/validation.xml" /> 
+<!-- 		<set-property  -->
+<!-- 		property="stopOnFirstError" value="true"/>  -->
+		</plug-in> 
 </struts-config>

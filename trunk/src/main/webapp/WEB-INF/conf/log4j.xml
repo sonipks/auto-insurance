@@ -261,5 +261,6 @@
 		<!-- <level value="DEBUG" /> -->
 		<appender-ref ref="ROOT_CONSOLE" />
 		<appender-ref ref="ROOT_ERROR" />
+		<appender-ref ref="ROOT_DEBUG" />
 	</root>
 </log4j:configuration>
