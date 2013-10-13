@@ -1,17 +1,17 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
-<link rel="stylesheet" href="template/css/blue.css" type="text/css" />
-<link rel="stylesheet" href="template/css/blue_bg.css" type="text/css" />
+<link rel="stylesheet" href="pages/template/css/blue.css" type="text/css" />
+<link rel="stylesheet" href="pages/template/css/blue_bg.css" type="text/css" />
 
 <!-- Calender related CSS -->
-<link type="text/css" rel="stylesheet" href="template/css/jscal2.css" />
+<link type="text/css" rel="stylesheet" href="pages/template/css/jscal2.css" />
 <link type="text/css" rel="stylesheet"
-	href="template/css/border-radius.css" />
-<link rel="stylesheet" type="text/css" href="template/css/gold/gold.css" />
-<script type="text/javascript" src="template/js/jscal2.js"></script>
-<script type="text/javascript" src="template/js/unicode-letter.js"></script>
-<script type="text/javascript" src="template/js/lang/en.js"></script>
+	href="pages/template/css/border-radius.css" />
+<link rel="stylesheet" type="text/css" href="pages/template/css/gold/gold.css" />
+<script type="text/javascript" src="pages/template/js/jscal2.js"></script>
+<script type="text/javascript" src="pages/template/js/unicode-letter.js"></script>
+<script type="text/javascript" src="pages/template/js/lang/en.js"></script>
 
 <body class="color_blue bg_blue width_fmax">
 	<div class="center" align="center">
@@ -85,14 +85,16 @@
 									</td>
 									<td>
 										<!-- element that will contain the calendar --> <html:text name="UserForm" styleId="dateOfBirth"
-										readonly="readonly" style="width:10;" styleClass="inputbox" property="dateOfBirthString"/><html:image
-														src="template/images/calendar.png" styleId="calendar-trigger" /> <script
-											type="text/javascript">
-											Calendar.setup({
-												trigger : "calendar-trigger",
-												inputField : "dateOfBirth"
-											});
-										</script><span class="serr" id="dateOfBirth">*</span>
+										readonly="readonly" style="width:10;" styleClass="inputbox" property="dateOfBirthString"/>
+<%-- 										<html:image --%>
+<%-- 														src="pages/template/images/calendar.png" styleId="calendar-trigger" />
+ <script --%>
+<!-- 											type="text/javascript"> // 											Calendar.setup({
+// 												trigger : "calendar-trigger",
+// 												inputField : "dateOfBirth"
+// 											});
+<!-- 										</script> -->
+<span class="serr" id="dateOfBirth">*</span>
 									</td>
 								</tr>
 								<tr>

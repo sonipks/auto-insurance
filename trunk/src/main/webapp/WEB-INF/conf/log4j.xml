@@ -33,7 +33,7 @@
 	<!-- A date based rolling appender -->
 	<appender name="ROOT_ERROR" class="org.apache.log4j.DailyRollingFileAppender">
 		<param name="Threshold" value="ERROR" />
-		<param name="File" value="logs/root_error.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/root_error.log" />
 
 		<!-- Rollover at midnight each day -->
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
@@ -48,7 +48,7 @@
 	<!-- A debug based rolling file handler -->
 	<appender name="ROOT_DEBUG" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/root_debug.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/root_debug.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="100" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -69,7 +69,7 @@
 	<!-- A hibernate debug based rolling file handler -->
 	<appender name="HIBERNATE_DEBUG" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_debug.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_debug.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -80,7 +80,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_ERROR" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="ERROR" />
-		<param name="File" value="logs/hb_error.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_error.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -90,7 +90,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_SQL" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_sql.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_sql.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -100,7 +100,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_TYPE" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_type.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_type.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -110,7 +110,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_HBM2DDL" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_hbm2ddl.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_hbm2ddl.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -120,7 +120,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_PRETTY" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_pretty.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_pretty.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -130,7 +130,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_CACHE" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_cache.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_cache.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -140,7 +140,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_TRANSACTION" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_transaction.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_transaction.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -150,7 +150,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_JDBC" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_jdbc.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_jdbc.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -160,7 +160,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_AST" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_ast.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_ast.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -170,7 +170,7 @@
 	<!-- A hibernate error based rolling file handler -->
 	<appender name="HIBERNATE_SECURE" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="DEBUG" />
-		<param name="File" value="logs/hb_secure.log" />
+		<param name="File" value="C:/TEMP/auto-insurance/trunk/logs/hb_secure.log" />
 		<param name="MaxFileSize" value="100kb" />
 		<param name="MaxBackupIndex" value="10" />
 		<layout class="org.apache.log4j.PatternLayout">

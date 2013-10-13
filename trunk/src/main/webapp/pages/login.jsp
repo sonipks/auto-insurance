@@ -1,7 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
-<link href="template/css/login.css" rel="stylesheet" type="text/css" />
+<link href="pages/template/css/login.css" rel="stylesheet" type="text/css" />
 <link type="text/css" rel="stylesheet" href="template/js/validate">
 <script>
 	window.history.forward(1);

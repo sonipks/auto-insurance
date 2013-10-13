@@ -85,7 +85,7 @@
 
 	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
 
-	<message-resources parameter="ApplicationResource" />
+	<message-resources parameter="/WEB-INF/conf/ApplicationResource" />
 
 	<!-- ========================= Tiles plugin =============================== -->
 	<!-- This plugin initialize Tiles definition factory. This later can takes 
