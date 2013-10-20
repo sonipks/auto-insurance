@@ -1,8 +1,9 @@
 package com.pks.insurance.form;
 
+import org.apache.struts.validator.ValidatorActionForm;
 import org.apache.struts.validator.ValidatorForm;
 
-public class VehicleActionForm extends ValidatorForm {
+public class VehicleActionForm extends ValidatorActionForm {
 
 	/**
 	 * 

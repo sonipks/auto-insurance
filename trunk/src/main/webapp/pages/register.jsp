@@ -86,14 +86,14 @@
 									<td>
 										<!-- element that will contain the calendar --> <html:text name="UserForm" styleId="dateOfBirth"
 										readonly="readonly" style="width:10;" styleClass="inputbox" property="dateOfBirthString"/>
-<%-- 										<html:image --%>
-<%-- 														src="pages/template/images/calendar.png" styleId="calendar-trigger" />
- <script --%>
-<!-- 											type="text/javascript"> // 											Calendar.setup({
-// 												trigger : "calendar-trigger",
-// 												inputField : "dateOfBirth"
-// 											});
-<!-- 										</script> -->
+ 										<html:image 
+ 														src="pages/template/images/calendar.png" styleId="calendar-trigger" />
+ <script 
+ 											type="text/javascript"> 											Calendar.setup({
+ 												trigger : "calendar-trigger",
+ 												inputField : "dateOfBirth"
+ 											});
+ 										</script> 
 <span class="serr" id="dateOfBirth">*</span>
 									</td>
 								</tr>
