@@ -2,8 +2,6 @@ package com.pks.insurance.service;
 
 import java.util.List;
 
-import com.pks.insurance.dao.UserDAO;
-import com.pks.insurance.dao.VehicleDAO;
 import com.pks.insurance.domain.User;
 import com.pks.insurance.domain.Vehicle;
 import com.pks.insurance.helper.UserLevels;
@@ -57,18 +55,6 @@ public interface UserManager {
 	 * @return UserLevel for more info {@link UserLevels}
 	 */
 	int authenticateUser(User user);
-
-	/**
-	 * @param userDAO
-	 *            the userDAO to set
-	 */
-	void setUserDAO(UserDAO userDAO);
-
-	/**
-	 * @param vehicleDAO
-	 *            the vehicleDAO to set
-	 */
-	void setVehicleDAO(VehicleDAO vehicleDAO);
 
 	List<User> getUsers();
 

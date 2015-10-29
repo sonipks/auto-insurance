@@ -10,7 +10,8 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.stereotype.Component;
+@Component("/logout")
 public class LogoutAction extends Action {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(LogoutAction.class);

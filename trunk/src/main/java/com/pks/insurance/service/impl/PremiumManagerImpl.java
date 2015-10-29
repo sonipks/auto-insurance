@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pks.insurance.dao.UserDAO;
 import com.pks.insurance.domain.User;
@@ -18,22 +20,14 @@ import com.pks.insurance.service.PremiumManager;
  * @author Pankaj Soni
  * 
  */
+@Service("premiumManager")
 public class PremiumManagerImpl implements PremiumManager {
-
+	
+	@Autowired
 	private UserDAO userDAO;
+	
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(PremiumManagerImpl.class);
-
-	/**
-	 * (non-Javadoc)
-	 * 
-	 * @see com.pks.insurance.service.impl.UserManager#setUserDAO(com.pks.insurance
-	 *      .dao.UserDAO)
-	 */
-	@Override
-	public void setUserDAO(UserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
 
 	/**
 	 * Business logic to retrive premium quote for a user
@@ -41,6 +35,7 @@ public class PremiumManagerImpl implements PremiumManager {
 	 * @param ssn
 	 * @return quote for vehicle
 	 */
+	@Override
 	public Map<String, Object> getQuote(String ssn) {
 		LOGGER.debug("begin");
 		User user = userDAO.getUser(ssn);

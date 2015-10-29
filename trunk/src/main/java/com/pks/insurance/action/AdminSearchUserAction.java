@@ -10,23 +10,18 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.DynaActionForm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.pks.insurance.service.UserManager;
-
+@Component("/searchUser")
 public class AdminSearchUserAction extends Action {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(AdminSearchUserAction.class);
 	private static final String SUCCESS = "success";
 	private static final String FAILURE = "failure";
+	@Autowired
 	private UserManager userManager;
-
-	/**
-	 * @param userManager
-	 *            the userManager to set
-	 */
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
-	}
 
 	/*
 	 * (non-Javadoc)

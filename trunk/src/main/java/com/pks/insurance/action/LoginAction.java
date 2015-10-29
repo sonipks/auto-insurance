@@ -10,26 +10,22 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.DynaActionForm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.pks.insurance.domain.User;
 import com.pks.insurance.helper.UserLevels;
 import com.pks.insurance.service.UserManager;
-
+@Component("/login")
 public class LoginAction extends Action {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(LoginAction.class);
 	private static final String ADMIN_SUCCESS = "adminSuccess";
 	private static final String SUCCESS = "success";
 	private static final String FAILURE = "failure";
-	private UserManager userManager;
 
-	/**
-	 * @param userManager
-	 *            the userManager to set
-	 */
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
-	}
+	@Autowired
+	private UserManager userManager;
 
 	/*
 	 * (non-Javadoc)

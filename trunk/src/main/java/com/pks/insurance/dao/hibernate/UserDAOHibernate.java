@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pks.insurance.dao.UserDAO;
@@ -16,11 +18,14 @@ import com.pks.insurance.domain.Vehicle;
  * 
  * @author Pankaj Soni
  */
-
-public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
+@Repository("userDao")
+public class UserDAOHibernate implements UserDAO {
 
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(UserDAOHibernate.class);
+
+	@Autowired
+	private HibernateTemplate template;
 
 	/**
 	 * (non-Javadoc)
@@ -33,7 +38,7 @@ public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
 		Vehicle vehicle = new Vehicle();
 		vehicle.setSsn(user.getSsn());
 		user.setVehicle(vehicle);
-		getHibernateTemplate().saveOrUpdate(user);
+		template.saveOrUpdate(user);
 	}
 
 	/**
@@ -57,9 +62,8 @@ public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
 	@Override
 	@Transactional
 	public final void updateUser(User user) {
-		user.setVehicle((Vehicle) getHibernateTemplate().load(Vehicle.class,
-				user.getSsn()));
-		getHibernateTemplate().merge(user);
+		user.setVehicle(template.load(Vehicle.class, user.getSsn()));
+		template.merge(user);
 	}
 
 	/**
@@ -69,7 +73,7 @@ public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
 	 */
 	@Override
 	public final User getUser(final String ssn) {
-		return (User) getHibernateTemplate().get(User.class, ssn);
+		return template.get(User.class, ssn);
 	}
 
 	/**
@@ -80,7 +84,7 @@ public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public final List<User> getUsers() {
-		return getHibernateTemplate().find("from User");
+		return template.find("from User");
 	}
 
 	/**
@@ -91,8 +95,7 @@ public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public final List<User> getUsers(final String ssn) {
-		return getHibernateTemplate().find("from User where ssn like ?",
-				"%" + ssn + "%");
+		return template.find("from User where ssn like ?", "%" + ssn + "%");
 	}
 
 	/**
@@ -103,9 +106,9 @@ public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
 	@Override
 	@Transactional
 	public final void removeUser(final String ssn) {
-		Object user = getHibernateTemplate().load(User.class, ssn);
+		Object user = template.load(User.class, ssn);
 		if (user != null)
-			getHibernateTemplate().delete(user);
+			template.delete(user);
 	}
 
 	/**
@@ -117,7 +120,7 @@ public class UserDAOHibernate extends HibernateDaoSupport implements UserDAO {
 	public final int authenticateUser(final User user) {
 		final String sql = "from User where ssn=? AND passwd=?";
 		@SuppressWarnings("rawtypes")
-		List result = getHibernateTemplate().find(sql,
+		List result = template.find(sql,
 				new String[] { user.getSsn(), user.getPasswd() });
 		if (result.size() == 0) {
 			LOGGER.warn("INVALID_USER: " + result);

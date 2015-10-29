@@ -9,23 +9,17 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import com.pks.insurance.service.PremiumManager;
-
+@Component("/quote")
 public class QuoteAction extends Action {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(QuoteAction.class);
 	private static final String SUCCESS = "success";
 	private static final String FAILURE = "failure";
+	@Autowired
 	private PremiumManager premiumManager;
-
-	/**
-	 * @param premiumManager
-	 *            the premiumManager to set
-	 */
-	public void setPremiumManager(PremiumManager premiumManager) {
-		this.premiumManager = premiumManager;
-	}
 
 	/*
 	 * (non-Javadoc)
@@ -42,8 +36,8 @@ public class QuoteAction extends Action {
 		// TODO Auto-generated method stub
 		String ssn = (String) request.getSession().getAttribute("ssn");
 		if (!("".equals(ssn)) || ssn != null) {
-		request.setAttribute("quote", premiumManager.getQuote(ssn));
-		return mapping.findForward(SUCCESS);
+			request.setAttribute("quote", premiumManager.getQuote(ssn));
+			return mapping.findForward(SUCCESS);
 		}
 		return mapping.findForward(FAILURE);
 	}

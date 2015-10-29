@@ -8,14 +8,20 @@
 
 <link href="/pages/template/css/favicon.ico" rel="shortcut icon"
 	type="image/x-icon" />
-	
-<link type="text/css" rel="stylesheet" href="pages/template/css/system.css" />
-<link type="text/css" rel="stylesheet" href="pages/template/css/login.css"   />
-<link type="text/css" rel="stylesheet" href="pages/template/css/rounded.css"  />
-<link type="text/css" rel="stylesheet" href="pages/template/css/general.css"  />
-<link type="text/css" rel="stylesheet" href="pages/template/css/template.css"  />
-<link type="text/css" rel="stylesheet" href="pages/template/css/icon.css" >
 
+<link type="text/css" rel="stylesheet"
+	href="pages/template/css/system.css" />
+<link type="text/css" rel="stylesheet"
+	href="pages/template/css/login.css" />
+<link type="text/css" rel="stylesheet"
+	href="pages/template/css/rounded.css" />
+<link type="text/css" rel="stylesheet"
+	href="pages/template/css/general.css" />
+<link type="text/css" rel="stylesheet"
+	href="pages/template/css/template.css" />
+<link type="text/css" rel="stylesheet"
+	href="pages/template/css/icon.css" />
+<!-- <script src="pages/template/js/angular.min.js"></script> -->
 <title><tiles:getAsString name="title" /></title>
 </head>
 <body>

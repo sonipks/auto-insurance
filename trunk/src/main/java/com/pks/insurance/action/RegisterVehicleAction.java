@@ -13,25 +13,20 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.pks.insurance.domain.Vehicle;
 import com.pks.insurance.form.VehicleActionForm;
 import com.pks.insurance.service.UserManager;
-
+@Component("/vehicleRegister")
 public class RegisterVehicleAction extends Action {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(RegisterVehicleAction.class);
 	private static final String SUCCESS = "success";
 	private static final String FAILURE = "failure";
+	@Autowired
 	private UserManager userManager;
-
-	/**
-	 * @param userManager
-	 *            the userManager to set
-	 */
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
-	}
 
 	/*
 	 * (non-Javadoc)
@@ -46,7 +41,7 @@ public class RegisterVehicleAction extends Action {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		// TODO Auto-generated method stub
-		VehicleActionForm vehicleForm=(VehicleActionForm)form;
+		VehicleActionForm vehicleForm = (VehicleActionForm) form;
 		HttpSession session = request.getSession(false);
 		Vehicle vehicle = new Vehicle();
 		BeanUtils.copyProperties(vehicle, vehicleForm);

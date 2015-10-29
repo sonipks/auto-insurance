@@ -14,6 +14,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.pks.insurance.domain.User;
 import com.pks.insurance.form.UserActionForm;
@@ -24,15 +25,8 @@ public class UpdateUserAction extends Action {
 			.getLogger(UpdateUserAction.class);
 	private static final String SUCCESS = "success";
 	private static final String FAILURE = "failure";
+	@Autowired
 	private UserManager userManager;
-
-	/**
-	 * @param userManager
-	 *            the userManager to set
-	 */
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
-	}
 
 	/*
 	 * (non-Javadoc)
@@ -47,15 +41,14 @@ public class UpdateUserAction extends Action {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		// TODO Auto-generated method stub
-		UserActionForm userForm=(UserActionForm)form;
-		
+		UserActionForm userForm = (UserActionForm) form;
+
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-dd");
 		Date dateOfBirth = null;
-		/*try {
-			dateOfBirth = dateFormat.parse(dateOfBirthString);
-		} catch (ParseException e) {
-			LOGGER.error(e.getMessage());
-		}*/
+		/*
+		 * try { dateOfBirth = dateFormat.parse(dateOfBirthString); } catch
+		 * (ParseException e) { LOGGER.error(e.getMessage()); }
+		 */
 
 		User user = new User();
 		BeanUtils.copyProperties(user, userForm);

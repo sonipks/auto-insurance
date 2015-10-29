@@ -2,6 +2,9 @@ package com.pks.insurance.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.pks.insurance.dao.UserDAO;
 import com.pks.insurance.dao.VehicleDAO;
 import com.pks.insurance.domain.User;
@@ -14,11 +17,16 @@ import com.pks.insurance.service.UserManager;
  * @author Pankaj Soni
  * 
  */
+@Service("userManager")
 public class UserManagerImpl implements UserManager {
 
 	// private static final Logger LOGGER = LoggerFactory
 	// .getLogger(UserManagerImpl.class);
+	
+	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
 	private VehicleDAO vehicleDAO;
 
 	/*
@@ -108,27 +116,5 @@ public class UserManagerImpl implements UserManager {
 		userDAO.removeUser(ssn);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.pks.insurance.service.impl.UserManager#setUserDAO(com.pks.insurance
-	 * .dao.UserDAO)
-	 */
-	@Override
-	public void setUserDAO(UserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.pks.insurance.service.impl.UserManager#setVehicleDAO(com.pks.insurance
-	 * .dao.VehicleDAO)
-	 */
-	@Override
-	public void setVehicleDAO(VehicleDAO vehicleDAO) {
-		this.vehicleDAO = vehicleDAO;
-	}
 }

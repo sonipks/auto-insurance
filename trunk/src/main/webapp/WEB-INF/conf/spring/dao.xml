@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-
-	<bean id="userDAO" class="com.pks.insurance.dao.hibernate.UserDAOHibernate">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<bean id="vehicleDAO" class="com.pks.insurance.dao.hibernate.VehicleDAOHibernate">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
 	<!-- <bean id="userManager" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> -->
 	<!-- <property name="transactionManager" ref="transactionManager"/> -->
@@ -23,12 +15,4 @@
 	<!-- </property> -->
 	<!-- </bean> -->
 
-	<bean id="userManager" class="com.pks.insurance.service.impl.UserManagerImpl">
-		<property name="userDAO" ref="userDAO" />
-		<property name="vehicleDAO" ref="vehicleDAO" />
-	</bean>
-
-	<bean id="premiumManager" class="com.pks.insurance.service.impl.PremiumManagerImpl">
-		<property name="userDAO" ref="userDAO"></property>
-	</bean>
 </beans>
