@@ -10,3 +10,6 @@ logs/*
 target/*
 /target
 mydb/*
+
+#Folder to ignore
+.settings
